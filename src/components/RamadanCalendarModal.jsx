@@ -1,10 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './RamadanCalendarModal.css';
 
 function RamadanCalendarModal({ isOpen, onClose }) {
     const [value, setValue] = useState(new Date(2026, 1, 19)); // Start date: Feb 19, 2026
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     if (!isOpen) return null;
 
@@ -68,7 +78,7 @@ function RamadanCalendarModal({ isOpen, onClose }) {
                         minDate={new Date(2026, 1, 1)}
                         maxDate={new Date(2026, 3, 30)}
                         defaultActiveStartDate={new Date(2026, 1, 1)}
-                        showDoubleView={true} // Show two months side by side
+                        showDoubleView={!isMobile} // Show two months on desktop, one on mobile
                         showFixedNumberOfWeeks={false}
                         next2Label={null}
                         prev2Label={null}
