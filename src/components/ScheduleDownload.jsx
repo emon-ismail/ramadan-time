@@ -78,9 +78,7 @@ function ScheduleDownload({ district, schedule, offset }) {
               <div style="display: inline-block; background: #ccfbf1; padding: 5px 20px; border-radius: 50px; margin-top: 10px; border: 1px solid #0d9488;">
                 <span style="color: #0f766e; font-weight: bold; font-size: 16px;">District: ${district}</span>
               </div>
-              <div style="margin-top: 10px; border-top: 1px solid #ccfbf1; padding-top: 8px;">
-                <span style="color: #0f766e; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">Sign & Design</span>
-              </div>
+             
             </div>
 
             <!-- Duas Area -->
