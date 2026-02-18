@@ -1,0 +1,199 @@
+.prayer-times-section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 16px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+}
+
+.section-title::before,
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #0d9488, transparent);
+    max-width: 80px;
+}
+
+.section-title::before {
+    background: linear-gradient(90deg, transparent, #0d9488);
+}
+
+.section-title::after {
+    background: linear-gradient(90deg, #0d9488, transparent);
+}
+
+.prayer-times-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e5e7eb;
+    position: relative;
+}
+
+.prayer-times-table::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0d9488, #0f766e, #0d9488);
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    color: white;
+    font-weight: 600;
+    padding: 14px 0;
+    position: relative;
+}
+
+.table-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.header-cell {
+    text-align: center;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 14px 0;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f3f4f6;
+    position: relative;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.row-even {
+    background: linear-gradient(90deg, #fafafa 0%, white 50%, #fafafa 100%);
+}
+
+.row-odd {
+    background: white;
+}
+
+.table-row:hover {
+    background: linear-gradient(90deg, #f0fdfa 0%, #f0fdfa 100%);
+    transform: scale(1.01);
+}
+
+.table-row::before {
+    content: '◆';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0d9488;
+    font-size: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.table-row:hover::before {
+    opacity: 0.6;
+}
+
+.table-cell {
+    text-align: center;
+    font-size: 0.9375rem;
+    color: #4b5563;
+    padding: 0 12px;
+}
+
+.prayer-name {
+    font-weight: 700;
+    color: #1f2937;
+    font-family: 'Amiri', serif;
+    font-size: 1.0625rem;
+    position: relative;
+}
+
+.jamat-time {
+    font-weight: 700;
+    color: #0d9488;
+    background: #f0fdfa;
+    padding: 4px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 12px 0;
+    }
+
+    .header-cell,
+    .table-cell {
+        font-size: 0.8125rem;
+        padding: 0 8px;
+    }
+
+    .section-title {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+
+    .section-title::before,
+    .section-title::after {
+        max-width: 50px;
+    }
+
+    .prayer-name {
+        font-size: 0.9375rem;
+    }
+
+    .jamat-time {
+        padding: 3px 8px;
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .header-cell,
+    .table-cell {
+        font-size: 0.75rem;
+        padding: 0 4px;
+    }
+
+    .prayer-name {
+        font-size: 0.875rem;
+    }
+
+    .jamat-time {
+        padding: 2px 6px;
+        font-size: 0.75rem;
+    }
+}

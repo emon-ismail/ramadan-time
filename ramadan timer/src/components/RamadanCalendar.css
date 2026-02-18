@@ -1,0 +1,247 @@
+.ramadan-calendar {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.calendar-container {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        padding: 16px;
+        border-radius: 12px;
+    }
+}
+
+/* Compact Header */
+.calendar-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+@media (max-width: 768px) {
+    .calendar-header {
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+    }
+}
+
+.header-arch {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    font-family: 'Amiri', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0d9488;
+    margin: 0 0 8px 0;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.375rem;
+    }
+}
+
+/* Compact Current Info */
+.current-info {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .current-info {
+        margin-bottom: 12px;
+    }
+}
+
+.current-time {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+    .current-time {
+        font-size: 1.125rem;
+    }
+}
+
+.current-date {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .current-date {
+        font-size: 0.8125rem;
+    }
+}
+
+.ramadan-notice {
+    margin-top: 8px;
+    padding: 8px 16px;
+    background: #fef3c7;
+    border-left: 3px solid #f59e0b;
+    border-radius: 6px;
+    color: #92400e;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    text-align: left;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .ramadan-notice {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Compact Ramadan Day - Inline with District */
+.top-info-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 12px 16px;
+    background: #f9fafb;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+@media (max-width: 640px) {
+    .top-info-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+        margin-bottom: 16px;
+    }
+}
+
+.ramadan-day-card {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .ramadan-day-card {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+    }
+}
+
+.day-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.day-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+}
+
+@media (max-width: 640px) {
+    .day-number {
+        font-size: 2rem;
+    }
+}
+
+/* Timers Grid - More Prominent */
+.timers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+    .timers-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .current-time {
+        font-size: 1rem;
+    }
+
+    .day-number {
+        font-size: 1.875rem;
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+}
+
+.table-title {
+    text-align: center;
+    color: #0f766e;
+    font-family: 'Amiri', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.table-title::before,
+.table-title::after {
+    content: '';
+    height: 2px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, #0d9488);
+    border-radius: 2px;
+}
+
+.table-title::after {
+    background: linear-gradient(90deg, #0d9488, transparent);
+}
+
+@media (max-width: 640px) {
+    .table-title {
+        font-size: 1.5rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .table-title::before,
+    .table-title::after {
+        width: 30px;
+    }
+}

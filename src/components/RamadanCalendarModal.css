@@ -1,0 +1,303 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modal Content - Wider for Double View */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 95%;
+    max-width: 800px;
+    /* Increased width for double view */
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 90vh;
+    /* Prevent overflow on small screens */
+    overflow-y: auto;
+}
+
+/* Header Layout */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.header-content {
+    text-align: left;
+}
+
+.modal-header h2 {
+    font-family: 'Amiri', serif;
+    color: #0d9488;
+    font-size: 32px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hijri-year {
+    color: #64748b;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #f1f5f9;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.modal-close {
+    background: #f1f5f9;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.modal-close:hover {
+    background: #cbd5e1;
+    color: #0f172a;
+    transform: rotate(90deg);
+}
+
+/* Calendar Wrapper */
+.calendar-wrapper {
+    margin-bottom: 25px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+/* React Calendar Structure */
+.react-calendar {
+    width: 100%;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    background: white;
+}
+
+/* Navigation (Month/Year) */
+.react-calendar__navigation {
+    display: flex;
+    height: 50px;
+    margin-bottom: 10px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.react-calendar__navigation button {
+    min-width: 44px;
+    background: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Double View Adjustments */
+.react-calendar__viewContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.react-calendar__month-view {
+    flex: 1;
+}
+
+/* Weekdays */
+.react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 11px;
+    color: #64748b;
+    padding: 10px 0;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+    padding: 5px;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none;
+}
+
+/* Tiles (Days) */
+.react-calendar__tile {
+    max-width: 100%;
+    padding: 12px 6px;
+    background: none;
+    text-align: center;
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 2px;
+    transition: all 0.2s ease;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+    background-color: #f1f5f9;
+}
+
+.react-calendar__tile--now {
+    background: #e2e8f0;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.react-calendar__tile--active {
+    background: #0d9488 !important;
+    color: white !important;
+}
+
+/* Custom Highlights */
+.ramadan-day {
+    background-color: #ccfbf1 !important;
+    color: #0f766e !important;
+    font-weight: 700;
+    position: relative;
+}
+
+.eid-day {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+    color: #b45309 !important;
+    font-weight: 800;
+    border: 1px solid #f59e0b;
+}
+
+/* Events List */
+.ramadan-events {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.ramadan-events h3 {
+    color: #0f172a;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.ramadan-events ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Grid layout for events */
+    gap: 15px;
+}
+
+.ramadan-events li {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.event-name {
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.event-date {
+    color: #0d9488;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    /* On mobile, stack the double view back to single column if needed, 
+     but react-calendar handles double view by just being wide. 
+     We might need to force it to wrap or just let it scroll horizontal if strictly needed,
+     but react-calendar usually switches to single view if width is constrained.
+     Ideally, we keep it double view on tablets/landscape, but maybe single on portrait phone.
+  */
+}
+
+@media (max-width: 500px) {
+
+    /* Force single view on very small screens effectively by limiting width */
+    .react-calendar__viewContainer {
+        flex-direction: column;
+    }
+
+    .modal-header h2 {
+        font-size: 24px;
+    }
+
+    .ramadan-events ul {
+        grid-template-columns: 1fr;
+    }
+}
