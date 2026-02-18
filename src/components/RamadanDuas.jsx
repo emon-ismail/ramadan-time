@@ -9,7 +9,6 @@ function RamadanDuas() {
                 {/* Sehri Dua */}
                 <div className="dua-card sehri-card">
                     <div className="dua-header">
-                        <span className="dua-icon">🌙</span>
                         <h3>Sehri Dua (Intention)</h3>
                     </div>
                     <p className="dua-arabic">نَوَيْتُ اَنْ اَصُوْمَ غَدًا مِّنْ شَهْرِ رَمَضَانَ</p>
@@ -21,7 +20,6 @@ function RamadanDuas() {
                 {/* Iftar Dua */}
                 <div className="dua-card iftar-card">
                     <div className="dua-header">
-                        <span className="dua-icon">🍎</span>
                         <h3>Iftar Dua (Breaking Fast)</h3>
                     </div>
                     <p className="dua-arabic">اَللَّهُمَّ لَكَ صُمْتُ وَعَلَى رِزْقِكَ اَفْطَرْتُ</p>
